@@ -1,0 +1,39 @@
+div.header {
+
+    height: 50px;
+    background-color: lightblue;
+}
+
+div.main {
+
+    display: block;
+    height: calc(100% - 70px);
+}
+
+div.main .sidebar {
+
+    padding-top: 20px;
+    width: 200px;
+    height: 100%;
+    float: left;
+}
+
+div.main .content {
+    width: calc (100% - 200px);
+    height: 100%;
+}
+
+div.footer {
+
+    height: 20px;
+    background-color: #4183D7;
+}
+
+div.main .content #profileView,  div.main .content #feedView {
+
+    text-align: center;
+    display: none;
+    height: 100%;
+    width: calc(100% - 300px);
+    float: right;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TweetBot v1.0</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.css" async />
+        <link rel="stylesheet" type="text/css" href="styles/tweetbot.css" async />
+        <link rel="stylesheet" type="text/css" href="styles/layout.css" async />
+        <link rel="stylesheet" type="text/css" href="styles/profile.css" async />
+        <link rel="stylesheet" type="text/css" href="styles/feed.css" async />
+
+        <!-- scripts -->
+        <script src="js/Global.js" async defer ></script>
+        <!--script src="js/JSONUtils.js" async defer ></script-->
+
+        <script src="js/index.js" async defer ></script>
+        
+        <script src="js/profile/Profile.js" async defer></script>
+        <script src="js/profile/ProfileStore.js" async defer></script>
+
+        <script src="js/feed/Feed.js" async defer ></script>
+        <script src="js/feed/Url.js" async defer ></script>
+        <script src="js/feed/FeedStore.js" async defer></script>
+
+    </head>
+    <body>
+
+        <div class="header">Welcome to tweetbot </div>
+        <div class="main">
+            <div class="sidebar">
+                <a id ="profileLink" href="javascript:void(0);" onclick="showView(event, 'profileView'); loadProfile();">Profile</a>
+                <a id = "feedLink" href="javascript:void(0);" onclick="showView(event, 'feedView'); loadFeeds();">Feed</a>
+            </div>
+            <div class="content">
+                <div id="profileView">
+                    <div id = "inputForm">
+                        <input id = "profileName" type="text" placeholder="Name" required />
+                        <input id = "profileAge" type="number" placeholder="Age" required />
+                        <input id = "profilePhone" type="phone" placeholder="Phone" required validate/>
+                        <input id = "profileEmail" type="email" placeholder="Email" required validate/>
+                        <input id = "profileAddress" type="text" placeholder="Address" />
+                        <input id = "profileImg" type="file" accept="image/*" placeholder="Your Photo" onchange="loadImage(event);"/>
+                        <img id="previewImg" src="styles/images/no-image.png" />
+                        <input type="button" onclick="saveProfile();" value = "Save Profile" />
+                    </div>
+                </div>
+                <div id="feedView">
+                    <div id="feedInput">
+                        <input id = "feedText" type = "text" placeholder="Enter a feed or URL" required validate/>
+                        <input id = "saveFeedBtn" type = "button" onclick="addFeed();" value="Post">
+                    </div>
+                    <div id="feedListView">
+                        <ul id = "feedList">
+                            <!--li>
+                               this is the feed 
+                                <span onclick="removeFeed(this);">X</span>
+                            </li-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Copyright 
+        </div>
+    </body>
+</html>
