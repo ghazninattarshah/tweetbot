@@ -1,7 +1,8 @@
 div.header {
 
     height: 50px;
-    background-color: lightblue;
+    background-color: #E03E1E;
+    font-size: 30px;
 }
 
 div.main {
@@ -21,6 +22,7 @@ div.main .sidebar {
 div.main .content {
     width: calc (100% - 200px);
     height: 100%;
+
 }
 
 div.footer {
@@ -36,4 +38,5 @@ div.main .content #profileView,  div.main .content #feedView {
     height: 100%;
     width: calc(100% - 300px);
     float: right;
+    overflow-y: auto;
 }

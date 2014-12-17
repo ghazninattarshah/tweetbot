@@ -31,23 +31,25 @@ Feed.prototype = {
 
 Feed.parseJson = function (feedJson) {
 
-    var rawFeedArray = JSON.parse(feedJson);
+    if (feedJson) {
 
-    var feedArray = new Array();
-    for (var i = 0; i < rawFeedArray.length; i++) {
+        var rawFeedArray = JSON.parse(feedJson);
 
-        var isFeedType = rawFeedArray[i].__type === Feed.__type;
-        var feed =  isFeedType ? new Feed() : new UrlFeed();
+        var feedArray = new Array();
+        for (var i = 0; i < rawFeedArray.length; i++) {
 
-        feed.setId(rawFeedArray[i].id);
-        if (isFeedType) {
-            feed.setText(rawFeedArray[i].text);
-        } else {
-            feed.setUrl(rawFeedArray[i].url);
+            var isFeedType = rawFeedArray[i].__type === 'Feed';
+            var feed =  isFeedType ? new Feed() : new UrlFeed();
+
+            feed.setId(rawFeedArray[i].id);
+            if (isFeedType) {
+                feed.setText(rawFeedArray[i].text);
+            } else {
+                feed.setUrl(rawFeedArray[i].url);
+            }
+            feedArray.push(feed);
         }
-        feedArray.push(feed);
     }
 
     return feedArray;
 };
-

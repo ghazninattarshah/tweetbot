@@ -47,10 +47,12 @@ var createUIFeed = function (feed) {
 
 var loadFeeds = function () {
 
+    $('feedList').innerHTML = "";
     var feeds = getFeedStore();
     for (var i = 0; i < feeds.length; i++) {
         createUIFeed(feeds[i]);
     }
+    $('feedText').focus();
 };
 
 var removeFeed = function (id) {
