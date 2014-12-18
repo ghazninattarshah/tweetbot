@@ -45,7 +45,7 @@ var createUIFeed = function (feed) {
                 : feed.getText();
     var classType = isUrlType ? "urlFeed" : "textFeed";
 
-    var feedStr = "<li class=\"" + classType + "\">" + feedContent + "<span onclick=\"removeFeed(" + feed.getId() + ");\"><i class=\"fa fa-trash fa-2x\"></i></span></li>";
+    var feedStr = "<li class=\"" + classType + "\"><span class=\"time\">" + new Date(feed.getId()).toLocaleString() + "</span>" + feedContent + "&nbsp;&nbsp;<span onclick=\"removeFeed(" + feed.getId() + ");\"><i class=\"fa fa-trash fa-2x\"></i></span></li>";
 
     var feedList = $('feedList');
     feedList.innerHTML = feedStr + feedList.innerHTML;

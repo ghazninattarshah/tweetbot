@@ -61,6 +61,15 @@
 
 .textFeed, .urlFeed {
     padding-top: 1%;
+    font-size: 20px !important;
+}
+
+.time {
+    float: left;
+    width: 20%;
+    font-size: 70%;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .textFeed {
