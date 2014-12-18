@@ -1,14 +1,58 @@
 div.header {
 
-    height: 50px;
-    background-color: #E03E1E;
+    height: 100px;
+    background-color: #323232;
     font-size: 30px;
+    box-shadow: 0px 0px 3px 3px #232222;
+}
+
+div.header .headerText {
+    color: #B32711;
+    height: 100%;
+    text-shadow:  2px 2px 2px #232222;
+
+}
+
+div.header .logo {
+    width: 90px;
+}
+
+div.header .links {
+    background-color: #323232;
+    display: inline;
+    float: right;
+    width: 45%;
+    height: 100%;
+    padding-top: 3%;
+    color: #DFDFDF;
+
+}
+
+div.header .links ul {
+    display: inline;
+    list-style-type: none;
+    width: 100%;
+    height: 100;
+    color: #DFDFDF;
+    font-size: 18px;
+    text-shadow:  2px 2px 1px #232222;
+}
+
+.lfLink {
+    float:right;
+    padding-right: 10%;
+}
+
+.plink:hover, .flink:hover, .lfLink:hover {
+    color: #D33F21;
+    cursor: pointer;
+    cursor: hand;
 }
 
 div.main {
 
     display: block;
-    height: calc(100% - 70px);
+    height: calc(100% - 130px);
 }
 
 div.main .sidebar {
@@ -20,15 +64,16 @@ div.main .sidebar {
 }
 
 div.main .content {
-    width: calc (100% - 200px);
+    width:100%;
     height: 100%;
-
 }
 
 div.footer {
 
-    height: 20px;
-    background-color: #4183D7;
+    height: 30px;
+    color: white;
+    background-color: #323232; 
+    text-shadow:  2px 2px 2px #232222;
 }
 
 div.main .content #profileView,  div.main .content #feedView {
@@ -36,7 +81,6 @@ div.main .content #profileView,  div.main .content #feedView {
     text-align: center;
     display: none;
     height: 100%;
-    width: calc(100% - 300px);
+    width: 100%;
     float: right;
-    overflow-y: auto;
 }

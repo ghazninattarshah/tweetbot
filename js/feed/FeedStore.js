@@ -10,36 +10,42 @@ var getFeedStore = function () {
 var addFeed = function () {
 
     var feedValue = $('feedText').value;
-    var isUrl = feedValue.indexOf('://') != -1;
+    
+    if (feedValue) {
+        
+        var isUrl = feedValue.indexOf('://') != -1;
 
-    var feed;
-    if (isUrl) {
+        var feed;
+        if (isUrl) {
 
-        feed = new UrlFeed();
-        feed.setUrl(feedValue);
-    } else {
+            feed = new UrlFeed();
+            feed.setUrl(feedValue);
+        } else {
 
-        feed = new Feed();
-        feed.setText(feedValue);
+            feed = new Feed();
+            feed.setText(feedValue);
+        }
+
+        feed.setId(+new Date());
+
+        var feedArray = getFeedStore();
+        feedArray.push(feed);
+
+        saveStore(FEED_STORE, feedArray);
+
+        createUIFeed(feed);
     }
-
-    feed.setId(+new Date());
-
-    var feedArray = getFeedStore();
-    feedArray.push(feed);
-
-    saveStore(FEED_STORE, feedArray);
-
-    createUIFeed(feed);
 };
 
 var createUIFeed = function (feed) {
 
-    var feedContent = (feed.__type === 'UrlFeed') 
+    var isUrlType = (feed.__type === 'UrlFeed');
+    var feedContent =  isUrlType
                 ? "<a href=\"" + feed.getUrl() + "\">" + feed.getUrl() + "</a>"
                 : feed.getText();
+    var classType = isUrlType ? "urlFeed" : "textFeed";
 
-    var feedStr = "<li>" + feedContent + "<span onclick=\"removeFeed(" + feed.getId() + ");\"><i class=\"fa fa-trash fa-2x\"></i></span></li>";
+    var feedStr = "<li class=\"" + classType + "\">" + feedContent + "<span onclick=\"removeFeed(" + feed.getId() + ");\"><i class=\"fa fa-trash fa-2x\"></i></span></li>";
 
     var feedList = $('feedList');
     feedList.innerHTML = feedStr + feedList.innerHTML;
@@ -77,3 +83,12 @@ var removeFeed = function (id) {
         }
     }
 };
+
+var onFeedPostKeyPressed = function (event) {
+
+    if (isEnterKeyPressed(event)) {
+        addFeed();
+    } else {
+        return false;
+    }
+}

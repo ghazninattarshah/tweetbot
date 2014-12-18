@@ -23,7 +23,7 @@
         <div id="loginForm">
             <div id= "errMsg" class="err">Incorrect username or password.</div>
             <input id ='userName' type='text' placeholder="Username" id="userName" maxlength="8" required validate autofocus/> <br>
-                <input id ='password' type='password' placeholder="Password" id="Password" minength="8" required validate/> <br>
+                <input id ='password' type='password' placeholder="Password" id="Password" minength="8" onkeypress="onKeyPressed(event);" required validate/> <br>
                 <i class="fa fa-arrow-circle-right fa-4x" onclick="login();"></i>
         </div>
         <div class="footerText">

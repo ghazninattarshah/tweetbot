@@ -1,20 +1,40 @@
-#inputForm > input {
-    display: block;
-    width: 300px;
-    margin: 5px;
-}
-
-#inputForm {
-    text-align: center;
-}
-
-img {
-    display: block;
-    margin: 5px;
-}
-
 #previewImg {
 
-    width: 200px;
-    height: 200px;
+    width: 45%;
+    height: 40%;
+    padding-top: 15%;
+    outline-color: #B32711;
+}
+
+#previewDiv {
+    float: left;
+}
+
+#profileForm {
+    padding-top: 10%;
+    padding-left: 10%;
+    width: 30%;
+    height:100%;
+    vertical-align: middle;
+    float: left;
+}
+
+#profileForm > input {
+
+    margin: 4%;
+    float: left;
+    width: 100%;
+    height: 30px;
+    display: block;
+    font-family: 'verdana';
+    font-size: 15px;
+}
+
+#profileForm > input[type='text'],
+#profileForm > input[type='number'],
+#profileForm > input[type='phone'],
+#profileForm > input[type='email']{
+
+    outline-color: #B32711;
+    color: #B32711;    
 }

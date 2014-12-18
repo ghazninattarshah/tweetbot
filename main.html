@@ -11,13 +11,12 @@
         <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.css" async />
         <link rel="stylesheet" type="text/css" href="styles/tweetbot.css" async />
         <link rel="stylesheet" type="text/css" href="styles/layout.css" async />
-        <link rel="stylesheet" type="text/css" href="styles/profile.css" async />
-        <link rel="stylesheet" type="text/css" href="styles/feed.css" async />
+        <link rel="stylesheet" type="text/css" href="styles/profile/profile.css" async />
+        <link rel="stylesheet" type="text/css" href="styles/feed/feed.css" async />
 
         <!-- scripts -->
         <script src="js/Global.js" async defer ></script>
         <script src="js/utils.js" async defer ></script>
-        <!--script src="js/JSONUtils.js" async defer ></script-->
 
         <script src="js/main.js" async defer ></script>
         
@@ -27,33 +26,41 @@
         <script src="js/feed/Feed.js" async defer ></script>
         <script src="js/feed/Url.js" async defer ></script>
         <script src="js/feed/FeedStore.js" async defer></script>
-
     </head>
     <body>
-
-        <div class="header">Tweetbot 1.0 </div>
-        <div class="main">
-            <div class="sidebar">
-                <a id ="profileLink" href="javascript:void(0);" onclick="showView(event, 'profileView'); loadProfile();">Profile</a>
-                <a id = "feedLink" href="javascript:void(0);" onclick="showView(event, 'feedView'); loadFeeds();">Feed</a>
+        <div class="header">
+            <img class="logo" src="styles/images/sm-bird.png">
+            <span class = "headerText"><strong>Tweetbot</strong></span>
+            <div class="links">
+                <ul>
+                    <i class="fa fa-user fa plink" onclick="showView(event, 'profileView'); loadProfile();">&nbsp;<b>Profile</b></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-twitter fa flink" onclick="showView(event, 'feedView'); loadFeeds();">&nbsp;<b>Feed</b></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-power-off lfLink fa-2x" onclick="logout();"></i>
+                </ul>
             </div>
+        </div>
+        <div class="main">
             <div class="content">
                 <div id="profileView">
-                    <div id = "inputForm">
-                        <input id = "profileName" type="text" placeholder="Name" required />
-                        <input id = "profileAge" type="number" placeholder="Age" required />
+                    <div id = "profileForm">
+                        <input id = "profileName" type="text" placeholder="Name" required validate autofocus/>
+                        <input id = "profileAge" type="number" placeholder="Age" required validate/>
                         <input id = "profilePhone" type="phone" placeholder="Phone" required validate/>
                         <input id = "profileEmail" type="email" placeholder="Email" required validate/>
                         <input id = "profileAddress" type="text" placeholder="Address" />
                         <input id = "profileImg" type="file" accept="image/*" placeholder="Your Photo" onchange="loadImage(event);"/>
-                        <img id="previewImg" src="styles/images/no-image.png" />
                         <input type="button" onclick="saveProfile();" value = "Save Profile" />
                     </div>
+                    <div id="previewDiv">
+                        <img id="previewImg" src="styles/images/no-image.png" />
+                    </div>
+                          
                 </div>
                 <div id="feedView">
                     <div id="feedInput">
                         <input id = "feedText" type = "text" placeholder="Enter a feed or URL" required validate/>
-                        <input id = "saveFeedBtn" type = "button" onclick="addFeed();" value="Post">
+                        <input id = "saveFeedBtn" type = "button" onclick="addFeed();" onkeypress="onFeedPostKeyPressed(event);" value="Post">
                     </div>
                     <div id="feedListView">
                         <ul id = "feedList">
@@ -63,7 +70,7 @@
             </div>
         </div>
         <div class="footer">
-            Copyright &copy; 2014 Tweetbot.
+            <i>Copyright &copy; 2014 Tweetbot. </i>
         </div>
     </body>
 </html>

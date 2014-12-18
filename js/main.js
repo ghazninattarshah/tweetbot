@@ -22,3 +22,7 @@ var loadImage = function (event) {
     }
     reader.readAsDataURL(event.target.files[0]);
 };
+
+var logout = function () {
+    window.location = "/index.html";
+}

@@ -36,3 +36,7 @@ var getLocalStore = function (storeKey) {
 var saveStore = function (storeKey, storeValue) {
     localStorage.setItem(storeKey, JSON.stringify(storeValue));
 };
+
+var isEnterKeyPressed = function (event) {
+  return (event.keyCode == 13);
+};
