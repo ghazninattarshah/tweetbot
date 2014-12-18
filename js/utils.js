@@ -1,10 +1,20 @@
 /**
+ * Filename : utils.js
+ * Author   : Ghazni Nattarshah
+ * Date     : DEC 10, 2014 
+ */
+'use strict';
+
+/**
  * Gets the element by id.
  */
 var $ = function (id) {
     return document.getElementById(id);
 };
 
+/**
+ * Gets the element by tag name.
+ */
 var $$ = function (name) {
     return document.getElementsByName(name);
 }

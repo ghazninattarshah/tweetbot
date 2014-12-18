@@ -1,4 +1,10 @@
+/**
+ * Filename : Profile.js
+ * Author   : Ghazni Nattarshah
+ * Date     : DEC 16, 2014 
+ */
 'use strict';
+
 
 /**
  * Model object to hold Profile object

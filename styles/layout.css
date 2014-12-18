@@ -7,6 +7,7 @@ div.header {
 }
 
 div.header .headerText {
+
     color: #B32711;
     height: 100%;
     text-shadow:  2px 2px 2px #232222;
@@ -18,6 +19,7 @@ div.header .logo {
 }
 
 div.header .links {
+
     background-color: #323232;
     display: inline;
     float: right;
@@ -25,10 +27,10 @@ div.header .links {
     height: 100%;
     padding-top: 3%;
     color: #DFDFDF;
-
 }
 
 div.header .links ul {
+
     display: inline;
     list-style-type: none;
     width: 100%;
@@ -39,11 +41,13 @@ div.header .links ul {
 }
 
 .lfLink {
+
     float:right;
     padding-right: 10%;
 }
 
 .plink:hover, .flink:hover, .lfLink:hover {
+
     color: #D33F21;
     cursor: pointer;
     cursor: hand;
@@ -64,6 +68,7 @@ div.main .sidebar {
 }
 
 div.main .content {
+
     width:100%;
     height: 100%;
 }

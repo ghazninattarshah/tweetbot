@@ -1,3 +1,8 @@
+/**
+ * Filename : Global.js
+ * Author   : Ghazni Nattarshah
+ * Date     : DEC 16, 2014 
+ */
 'use strict';
 
 /**
@@ -37,6 +42,10 @@ var saveStore = function (storeKey, storeValue) {
     localStorage.setItem(storeKey, JSON.stringify(storeValue));
 };
 
+/*
+ * Helper method to find whether ENTER key is pressed or not.
+ * return true if ENTER key is pressed otherwise false
+ */
 var isEnterKeyPressed = function (event) {
   return (event.keyCode == 13);
 };

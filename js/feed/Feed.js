@@ -29,6 +29,9 @@ Feed.prototype = {
     }
 };
 
+/*
+ * Helper method to parse the java object to Feed object
+ */
 Feed.parseJson = function (feedJson) {
 
     if (feedJson) {

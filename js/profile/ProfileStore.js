@@ -1,4 +1,10 @@
+/**
+ * Filename : ProfileStore.js
+ * Author   : Ghazni Nattarshah
+ * Date     : DEC 16, 2014 
+ */
 'use strict';
+
 
 /**
  * Helper method used to get the profile store from local storage.

@@ -1,5 +1,13 @@
+/**
+ * Filename : FeedStore.js
+ * Author   : Ghazni Nattarshah
+ * Date     : DEC 16, 2014 
+ */
 'use strict';
 
+/*
+ * Helper method to get the feed store
+ */
 var getFeedStore = function () {
 
     var feedStore = getLocalStore(FEED_STORE);
@@ -7,6 +15,9 @@ var getFeedStore = function () {
     return feedStore === null ? new Array() : feedArray;
 };
 
+/*
+ * Creates a feed
+ */
 var addFeed = function () {
 
     var feedValue = $('feedText').value;
@@ -37,6 +48,9 @@ var addFeed = function () {
     }
 };
 
+/* 
+ * UI Helper method to create a dynamic <li> to add new feed.
+ */
 var createUIFeed = function (feed) {
 
     var isUrlType = (feed.__type === 'UrlFeed');
@@ -51,6 +65,9 @@ var createUIFeed = function (feed) {
     feedList.innerHTML = feedStr + feedList.innerHTML;
 };
 
+/*
+ * Read and load the feeds to UI.
+ */
 var loadFeeds = function () {
 
     $('feedList').innerHTML = "";
@@ -61,6 +78,9 @@ var loadFeeds = function () {
     $('feedText').focus();
 };
 
+/*
+ * Removes a feed
+ */
 var removeFeed = function (id) {
 
     var feeds = getFeedStore();
@@ -84,6 +104,9 @@ var removeFeed = function (id) {
     }
 };
 
+/*
+ * keypress event to handle enterkey on post a feed
+ */
 var onFeedPostKeyPressed = function (event) {
 
     if (isEnterKeyPressed(event)) {

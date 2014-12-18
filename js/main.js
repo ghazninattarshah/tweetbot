@@ -1,3 +1,8 @@
+/**
+ * Filename : main.js
+ * Author   : Ghazni Nattarshah
+ * Date     : DEC 17, 2014 
+ */
 'use strict';
 
 /*
@@ -23,6 +28,9 @@ var loadImage = function (event) {
     reader.readAsDataURL(event.target.files[0]);
 };
 
+/*
+ * Performs the logout, it would redirect to index page
+ */
 var logout = function () {
     window.location = "/index.html";
 }
