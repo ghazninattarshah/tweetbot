@@ -15,7 +15,7 @@ var login = function () {
     var password = $('password');
 
     if (userName.value === 'admin' && password.value === 'admin') {
-        window.location = "/main.html";
+        window.location = "main.html";
     } else {
         show('errMsg');
     }

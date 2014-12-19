@@ -32,5 +32,5 @@ var loadImage = function (event) {
  * Performs the logout, it would redirect to index page
  */
 var logout = function () {
-    window.location = "/index.html";
+    window.location = "index.html";
 }
